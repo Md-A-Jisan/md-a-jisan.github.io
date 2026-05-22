@@ -1,143 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>MD. ANTORUZZAMAN JISAN - Profile</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Source Serif 4', Georgia, serif;
-    background: #f9f5ee;
-    color: #F97A00;
-    font-size: 15px;
-    line-height: 1.6;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Source Serif 4', serif;
+  background:#f9f5ee;
+  overflow-x:hidden;
+}
+
+/* ================= HEADER ================= */
+
+#site-header{
+  background:#006400;
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  position:relative;
+}
+
+#profile-photo img{
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  border:3px solid #fff;
+  background:#ddd;
+}
+
+#header-info{
+  flex:1;
+}
+
+#header-name{
+  font-family:'Playfair Display', serif;
+  font-size:42px;
+  color:#fff;
+  line-height:1.15;
+  margin-bottom:6px;
+}
+
+#header-info p{
+  color:#fff;
+  font-size:15px;
+  line-height:1.6;
+}
+
+#header-logo img{
+  width:90px;
+  height:90px;
+  object-fit:contain;
+}
+
+/* ================= MOBILE MENU BUTTON ================= */
+
+#menu-toggle{
+  display:none;
+  position:absolute;
+  right:20px;
+  bottom:18px;
+  width:42px;
+  height:42px;
+  border:none;
+  background:transparent;
+  cursor:pointer;
+  z-index:1001;
+}
+
+#menu-toggle span{
+  display:block;
+  width:30px;
+  height:4px;
+  background:#ff2b2b;
+  margin:5px auto;
+  border-radius:10px;
+}
+
+/* ================= MAIN LAYOUT ================= */
+
+#main-layout{
+  display:flex;
+  min-height:calc(100vh - 160px);
+}
+
+/* ================= SIDEBAR ================= */
+
+#sidebar{
+  width:220px;
+  background:#8b0000;
+  padding:12px 0;
+  flex-shrink:0;
+  transition:0.35s;
+}
+
+.nav-item a{
+  display:block;
+  padding:12px 20px;
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  transition:0.3s;
+}
+
+.nav-item a:hover,
+.nav-item a.active{
+  background:#c8960c;
+  color:#111;
+}
+
+/* ================= CONTENT ================= */
+
+#content{
+  flex:1;
+  background:#F97A00;
+  padding:40px 45px;
+  color:#000;
+}
+
+.section-block{
+  margin-bottom:42px;
+}
+
+.section-title{
+  font-family:'Playfair Display', serif;
+  font-size:28px;
+  color:#006400;
+  margin-bottom:18px;
+  border-bottom:2px solid rgba(255,255,255,0.2);
+  padding-bottom:8px;
+}
+
+.section-para{
+  font-size:15px;
+  line-height:1.9;
+}
+
+.item-list{
+  list-style:none;
+}
+
+.item-list li{
+  padding:10px 0;
+  border-bottom:1px solid rgba(0,0,0,0.15);
+  font-size:15px;
+  display:flex;
+  gap:10px;
+}
+
+.item-list li::before{
+  content:"▸";
+  color:#006400;
+  font-weight:bold;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-name{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.contact-row{
+  display:flex;
+  gap:30px;
+  margin-bottom:18px;
+}
+
+.contact-label{
+  min-width:70px;
+  font-weight:700;
+}
+
+.contact-detail{
+  line-height:1.8;
+  font-size:15px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#000;
+  color:rgba(255,255,255,0.6);
+  text-align:center;
+  padding:16px;
+  font-size:13px;
+}
+
+footer a{
+  color:#66bb6a;
+  text-decoration:none;
+}
+
+/* ================= MOBILE VIEW ================= */
+
+@media(max-width:768px){
+
+  body{
+    overflow-x:hidden;
   }
 
-  /* HEADER */
-  #site-header {
-    background: #006400;
-    padding: 18px 28px;
-    display: flex;
-    align-items: center;
-    gap: 22px;
-  }
-  #profile-photo img {
-    width: 110px; height: 110px;
-    object-fit: cover;
-    border: 3px solid #fff;
-    background: #ddd;
-  }
-  #header-info { flex: 1; }
-  #header-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: #FFFFFF;
-    margin-bottom: 4px;
-  }
-  #header-info p { font-size: 13.5px; line-height: 1.55; color: #FFFFFF; }
-  #header-logo { margin-left: auto; }
-  #header-logo img { width: 80px; height: 80px; object-fit: contain; }
-
-  /* LAYOUT */
-  #main-layout { display: flex; min-height: calc(100vh - 160px); }
-
-  /* SIDEBAR */
-  #sidebar { width: 200px; background: #8b0000; padding: 10px 0; flex-shrink: 0; }
-  .nav-item a {
-    display: block;
-    padding: 11px 20px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background 0.30s;
-  }
-  .nav-item a:hover, .nav-item a.active { background: #c8960c; color: #1a1a1a; }
-
-  /* CONTENT */
-  #content { flex: 1; background: #F97A00; padding: 36px 44px; color: #000000; }
-
-  .section-block { margin-bottom: 40px; }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: #006400;
-    margin-bottom: 18px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 6px;
+  #site-header{
+    align-items:flex-start;
+    padding:18px 16px 22px;
+    gap:15px;
   }
 
-  /* CONTACT */
-  .contact-name { font-size: 16px; font-weight: 600; margin-bottom: 18px; }
-  .contact-row { display: flex; gap: 28px; margin-bottom: 14px; align-items: flex-start; }
-  .contact-label { color: #000000; font-weight: 700; font-size: 14px; min-width: 60px; padding-top: 1px; }
-  .contact-detail { font-size: 14px; line-height: 1.7; }
-
-  /* LIST */
-  .item-list { list-style: none; padding: 0; }
-  .item-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 7px 0;
-    font-size: 14px;
-    border-bottom: 1px solid #000000 );
-  }
-  .item-list li::before { content: '▸'; color: #66bb6a; font-size: 13px; margin-top: 2px; flex-shrink: 0; }
-
-  /* PARAGRAPH */
-  .section-para { font-size: 14.5px; line-height: 1.75; color:#000000; }
-
-  /* FOOTER */
-  footer {
-    background: #000000;
-    color: rgba(255,255,255,0.5);
-    text-align: center;
-    padding: 14px;
-    font-size: 12.5px;
+  #profile-photo img{
+    width:105px;
+    height:105px;
   }
 
-  @media (max-width: 680px) {
-    #main-layout { flex-direction: column; }
-    #sidebar { width: 100%; }
-    #content { padding: 22px 18px; }
-    #site-header { flex-wrap: wrap; }
+  #header-info{
+    padding-right:50px;
   }
+
+  #header-name{
+    font-size:24px;
+    line-height:1.25;
+  }
+
+  #header-info p{
+    font-size:12px;
+    line-height:1.5;
+  }
+
+  /* Hide JUST logo on mobile */
+  #header-logo{
+    display:none;
+  }
+
+  /* Show hamburger */
+  #menu-toggle{
+    display:block;
+  }
+
+  /* Layout column */
+  #main-layout{
+    display:block;
+  }
+
+  /* Mobile Sidebar */
+  #sidebar{
+    position:fixed;
+    top:0;
+    right:-270px;
+    width:250px;
+    height:100vh;
+    z-index:999;
+    overflow-y:auto;
+    padding-top:80px;
+    box-shadow:-5px 0 18px rgba(0,0,0,0.3);
+  }
+
+  #sidebar.active{
+    right:0;
+  }
+
+  .nav-item a{
+    font-size:16px;
+    padding:15px 24px;
+  }
+
+  /* Content mobile friendly */
+  #content{
+    width:100%;
+    padding:24px 18px;
+  }
+
+  .section-title{
+    font-size:24px;
+  }
+
+  .section-para{
+    font-size:14px;
+    line-height:1.8;
+  }
+
+  .item-list li{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  .contact-row{
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .contact-label{
+    min-width:auto;
+  }
+
+}
+
+/* Overlay */
+
+#overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  z-index:998;
+  opacity:0;
+  visibility:hidden;
+  transition:0.3s;
+}
+
+#overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
 </style>
 </head>
+
 <body>
+
+<!-- OVERLAY -->
+<div id="overlay"></div>
 
 <!-- HEADER -->
 <header id="site-header">
+
   <div id="profile-photo">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivCJjgto-MD3opWFpZMWH4hW10Vd6GxB3Sqqow-nvzKzokIu8etjZ4VhEUQ15rnr-ptL0oVgRZTQ4ZrD6elLkwEfe2Ud5dkKU_rpei7FaRCIzFqYpizOyz2EG9Kl-M5qnFiuV2xi91Id-u-FpHJc0Urhq9m7VeEMLCXwMFVOLYimI4zPnoKHoqf-iQAuY/s16000/1000112425.jpg" alt="Profile Photo" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'110\' height=\'110\'%3E%3Crect width=\'110\' height=\'110\' fill=\'%23ccc\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'12\' fill=\'%23666\'%3EPhoto%3C/text%3E%3C/svg%3E'">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEivCJjgto-MD3opWFpZMWH4hW10Vd6GxB3Sqqow-nvzKzokIu8etjZ4VhEUQ15rnr-ptL0oVgRZTQ4ZrD6elLkwEfe2Ud5dkKU_rpei7FaRCIzFqYpizOyz2EG9Kl-M5qnFiuV2xi91Id-u-FpHJc0Urhq9m7VeEMLCXwMFVOLYimI4zPnoKHoqf-iQAuY/s16000/1000112425.jpg" alt="Profile Photo">
   </div>
+
   <div id="header-info">
     <div id="header-name">MD. ANTORUZZAMAN JISAN</div>
+
     <p>Student</p>
     <p>Department of Physics</p>
     <p>Jashore University of Science and Technology</p>
     <p>Jashore 7408, Bangladesh</p>
   </div>
+
+  <!-- Desktop Logo -->
   <div id="header-logo">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjS1vORtWeKrV9Qqo7JjjsB10JGR8ozcX5R-7hGvkjlYLmLdmKQgI6qUbdHdvScJ43QdwGWMiguo8uQGauEpCQYQAa20z-Cuf0OVppjbcMDb5hoq-bh9ICr9USq-Si5PID5l37dTWvQiug/s1600/JASHORE+UNIVERSITY+OF+SCIENCE+%2526+TECHNOLOGY+%2528JUST%2529++just+New++Logo.png" onerror="this.style.display='none'" alt="University Logo">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjS1vORtWeKrV9Qqo7JjjsB10JGR8ozcX5R-7hGvkjlYLmLdmKQgI6qUbdHdvScJ43QdwGWMiguo8uQGauEpCQYQAa20z-Cuf0OVppjbcMDb5hoq-bh9ICr9USq-Si5PID5l37dTWvQiug/s1600/JASHORE+UNIVERSITY+OF+SCIENCE+%2526+TECHNOLOGY+%2528JUST%2529++just+New++Logo.png" alt="University Logo">
   </div>
+
+  <!-- Mobile Menu Button -->
+  <button id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
 </header>
 
-<!-- MAIN LAYOUT -->
+<!-- MAIN -->
 <div id="main-layout">
 
-  <!-- SIDEBAR NAV -->
+  <!-- SIDEBAR -->
   <nav id="sidebar">
+
     <div class="nav-item"><a href="#about">About Me</a></div>
     <div class="nav-item"><a href="#research">Research</a></div>
- 
     <div class="nav-item"><a href="#lecture-notes">Sir Lecture Notes</a></div>
     <div class="nav-item"><a href="#videos">Books</a></div>
     <div class="nav-item"><a href="#students">Syllabus</a></div>
     <div class="nav-item"><a href="#official">Official Website</a></div>
     <div class="nav-item"><a href="#contact">Contact</a></div>
+
   </nav>
 
   <!-- CONTENT -->
@@ -146,114 +385,183 @@
     <!-- ABOUT -->
     <div class="section-block" id="about">
       <h2 class="section-title">About Me</h2>
+
       <p class="section-para">
-        I am an Student in the Department of Physics at Jashore University of Science and Technology. Passionate about nuclear physics, research, and modern technology. Curious about scientific discoveries, innovation, and solving real-world problems through physics and tech.
-        
+        I am a student in the Department of Physics at Jashore University of Science and Technology. Passionate about nuclear physics, research, and modern technology. Curious about scientific discoveries, innovation, and solving real-world problems through physics and tech.
       </p>
     </div>
 
     <!-- RESEARCH -->
     <div class="section-block" id="research">
       <h2 class="section-title">Research</h2>
+
       <p class="section-para">
         Physics student with strong research interest in nuclear physics and emerging technologies. Passionate about scientific innovation, problem-solving, and exploring the future through research and tech.
       </p>
     </div>
 
-   <!-- LECTURE NOTES -->
+    <!-- NOTES -->
     <div class="section-block" id="lecture-notes">
-      <h2 class="section-title"> Sir Lecture Notes</h2>
+      <h2 class="section-title">Sir Lecture Notes</h2>
+
       <ul class="item-list">
         <li>Vibration And Waves — Lecture Notes (PDF)</li>
-        <li>Electricity And Mangnetism — Lecture Notes (PDF)</li>
+        <li>Electricity And Magnetism — Lecture Notes (PDF)</li>
         <li>Geometry And Algebra — Lecture Notes (PDF)</li>
         <li>Linear Algebra — Lecture Notes (PDF)</li>
         <li>Physical Chemistry — Lecture Notes (PDF)</li>
       </ul>
     </div>
 
-    <!-- VIDEO LECTURES -->
+    <!-- BOOKS -->
     <div class="section-block" id="videos">
       <h2 class="section-title">Books PDF</h2>
+
       <ul class="item-list">
         <li>Vibration And Waves — (PDF)</li>
-        <li>Electricity And Mangnetism — (PDF)</li>
+        <li>Electricity And Magnetism — (PDF)</li>
         <li>Geometry And Algebra — (PDF)</li>
         <li>Linear Algebra — (PDF)</li>
         <li>Physical Chemistry — (PDF)</li>
-        
       </ul>
     </div>
 
-    <!-- STUDENTS -->
+    <!-- SYLLABUS -->
     <div class="section-block" id="students">
       <h2 class="section-title">Syllabus Of 1.2</h2>
+
       <p class="section-para">
-        1.2 Syllabus - (PDF)
+        1.2 Syllabus — (PDF)
       </p>
     </div>
 
-    <!-- OFFICIAL WEBSITE -->
+    <!-- WEBSITE -->
     <div class="section-block" id="official">
       <h2 class="section-title">Official Website</h2>
+
       <p class="section-para">
-      
+        Add official website links here.
       </p>
     </div>
 
     <!-- CONTACT -->
     <div class="section-block" id="contact">
+
       <h2 class="section-title">Contact</h2>
-      <div class="contact-name">Md. Antoruzzaman Jisan </div>
-      <div class="contact-row">
-        <div class="contact-label">Office</div>
-        <div class="contact-detail">
-          Room # 426<br>
-         HK Mess,Aambottola, jashore<br>
-          Email: 241335.phy@student.just.edu.bd<br>
-          Phone: +8801951032061 
-        </div>
+
+      <div class="contact-name">
+        Md. Antoruzzaman Jisan
       </div>
+
       <div class="contact-row">
-        <div class="contact-label">Mail</div>
+
+        <div class="contact-label">
+          Office
+        </div>
+
         <div class="contact-detail">
-         Student<br>
-          Department of Physics<br>
-          Jashore University of Science and Technology<br>
-          Jashore 7408, Bangladesh<br>
+          Room # 426 <br>
+          HK Mess, Aambottola, Jashore <br>
+          Email: 241335.phy@student.just.edu.bd <br>
+          Phone: +8801951032061
+        </div>
+
+      </div>
+
+      <div class="contact-row">
+
+        <div class="contact-label">
+          Mail
+        </div>
+
+        <div class="contact-detail">
+          Student <br>
+          Department of Physics <br>
+          Jashore University of Science and Technology <br>
+          Jashore 7408, Bangladesh <br>
           Mobile: +8801951032061
         </div>
+
       </div>
+
     </div>
 
   </main>
+
 </div>
 
+<!-- FOOTER -->
 <footer>
-  © 2026 MD ANTORUZZAMAN JISAN — Department of Physics, Jashore University of Science and Technology.... INSPIRED BY <a href="https://just.edu.bd/t/rashid" target="_blank" style="color:#66bb6a;">DR.MOHAMMAD ABDUR RASHID SIR </a>
+  © 2026 MD ANTORUZZAMAN JISAN — Department of Physics, Jashore University of Science and Technology.... INSPIRED BY 
+  <a href="https://just.edu.bd/t/rashid" target="_blank">
+    DR. MOHAMMAD ABDUR RASHID SIR
+  </a>
 </footer>
 
 <script>
-  // Smooth scroll + active nav highlight
-  const navLinks = document.querySelectorAll('.nav-item a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-    });
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menu-toggle");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
+/* CLOSE MENU AFTER CLICK */
+
+const navLinks = document.querySelectorAll('.nav-item a');
+
+navLinks.forEach(link => {
+
+  link.addEventListener('click', function(){
+
+    navLinks.forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+
   });
 
-  // Highlight nav on scroll
-  const sections = document.querySelectorAll('.section-block');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
-    });
-    navLinks.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-    });
+});
+
+/* ACTIVE NAV ON SCROLL */
+
+const sections = document.querySelectorAll('.section-block');
+
+window.addEventListener('scroll', () => {
+
+  let current = '';
+
+  sections.forEach(sec => {
+
+    if(window.scrollY >= sec.offsetTop - 120){
+      current = sec.id;
+    }
+
   });
+
+  navLinks.forEach(link => {
+
+    link.classList.toggle(
+      'active',
+      link.getAttribute('href') === '#' + current
+    );
+
+  });
+
+});
+
 </script>
+
 </body>
 </html>
